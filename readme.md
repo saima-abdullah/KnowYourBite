@@ -14,7 +14,7 @@ Get started by choosing **three potential topics**.  might be a domain you are f
 
 One of the best ways to get feedback on your ideas quickly is to share them with others. That's why for Part 1 of your Capstone project, you'll share three potential topics.
 
-**The ultimate choice of topic for your capstone project is yours!** However, this is research and development work. Sometimes projects that look easy can be difficult and vice versa. It never hurts to have a second (or third) option available.
+**The ultimate choice of topic for your capstone project is yours!** However, this is research and development work. Sometimes projects that look easy can be difficult and vice versa. It never hurts to have a second (or third) option available. Not sure where to start? Need some inspiration? Check out some past student capstone projects at the bottom of this README: [CLICK HERE](#example-projects)
 
 - **Goal**: Share three potential topics and/or potential sources of data.
 - **Due**: See Google Classroom.
@@ -59,3 +59,22 @@ You should already have the analytical work complete, so now it's time to clean 
 
 - **Goal**: Detailed presentation deck that relates your data, model, and findings to a non-technical audience.
 - **Due**: See Google Classroom.
+
+<a name="example-projects"></a>
+### Example Projects
+
+Below are some great capstone projects submitted by past DSI students!
+
+* [Kenya Chauche, DSI-10](https://github.com/KenyaChauche/sonnet-generation) built a natural language generation program trained on Shakespeare's sonnets
+* [Molly Baird, DSI-11](https://github.com/mollycbaird/ComputerVisionSET) wanted to computerize the game of SET, and succeeded admirably
+* [Daniel Johnston, DSI-2](https://github.com/djkjohnston/ML_from_scratch_GA_DSI_Capstone) built several key machine learning algos from scratch in python, comparing their performance to the scikit-learn implementations.  
+* [Alex Schultz, DSI-3](https://github.com/fullquartpress/DSI-Capstone) predicts spot coffee (commodity coffee bean) price changes from sentiment analysis of an industry trade publication.  
+* [Brice Walker, DSI-3](https://github.com/bricewalker/Hey-Jetson) wanted to play with his Jetson GPU and built voice transcription _from scratch_.  
+* [Caitlin Streamer, DSI-4](https://github.com/c-streams/Pneumonia) worked on a Kaggle dataset to predict pneumonia from chest X-rays.  
+* [Brian Osgood, DSI-04](https://github.com/osgoodbl/PyFilter) built a bot that crawls twitter and identifies whether an image tagged 'lamborghini' is actually a lamborghini.  
+* [Frank Turner, DSI-04](https://github.com/frankturnerv/Fashioning_Models_from_Fashion_Models) uses image recognition to identify the colors used in a fashion season's palette.  
+* [DSI-06, team](https://github.com/balak4/Optimizing-Evac-Routes) This is actually the DSI-6 group project. It's here because it's really, really impressive.  
+* [Amy Taylor, DSI-06](https://github.com/amytaylor330/CNN_for_Dance_Music_Classification_repost) wanted to quantify the difference between types of dance music.  
+* [Veronica Giannotta, DSI-06](https://github.com/vgiannotta/Emotional-Impacts-of-Viral-Content) delved into the dark side of the internet and evaluated the emotional sentiment of social media content that goes viral.
+* [Derek Steffan, DSI-07](https://github.com/dsteffan/twitch_chat_analysis) automates the process of creating twitch highlight reels using sentiment analysis, markov chains, and Bayesian analysis.  
+* [Sebastian Alvis, League of Legends](https://github.com/salvis2/SpringboardAlvis/tree/master/capstone_project_1) Not a GA capstone, but a very compelling case for applying data science to your interests to come up with a good capstone.
