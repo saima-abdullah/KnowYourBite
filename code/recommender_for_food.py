@@ -2,19 +2,19 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-# Preprocess data
+# preprocess data
 def preprocess_data(data):
     data['product_name'] = data['product_name'].str.lower().str.strip()
     data['food_groups'] = data['food_groups'].str.replace('en:', '').str.lower().str.strip()
     return data
 
-# Convert ingredients to vector representation
+# convert ingredients to vector representation
 def get_ingredient_vectors(data):
     tf_idf_vec = TfidfVectorizer()
     ingredient_vectors = tf_idf_vec.fit_transform(data['processed_ingredients'])
     return ingredient_vectors, tf_idf_vec
 
-# Recommend healthier alternatives
+# recommend healthier alternatives
 def recommend_healthier_alternate(product_name, data, ingredient_vectors, top_n=5):
     try:
         # Find product
