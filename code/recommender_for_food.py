@@ -17,14 +17,14 @@ def get_ingredient_vectors(data):
 # recommend healthier alternatives
 def recommend_healthier_alternate(product_name, data, ingredient_vectors, top_n=5):
     try:
-        # Find product
+        # find product
         matches = data[data['product_name'].str.contains(product_name.lower(), case=False, na=False)]
         if matches.empty:
             return f"Product '{product_name}' not found in the dataset."
         
         product_idx = matches.index[0]
 
-        # Check if product is healthy
+        # heck if product is healthy
         if data.iloc[product_idx]['health_label'] == 'healthy':
             return f"Product '{product_name}' is already labeled as healthy."
 
