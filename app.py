@@ -1,3 +1,5 @@
+
+#https://www.geeksforgeeks.org/introduction-to-python-pytesseract-package/
 import pickle
 import time
 import pandas as pd
@@ -26,6 +28,11 @@ st.markdown(
     }
     /* General Styling */
     body { 
+   
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;
+
+
         background-color: #FAFAFA; 
     }
     .stButton>button { 
@@ -46,10 +53,10 @@ st.title('🍎 Know Your Bite')
 st.markdown("### 🌟 Discover whether your food is healthy or not!", unsafe_allow_html=True)
 
 #  food products database
-df = pd.read_csv('data/final_data.csv')
+df = pd.read_csv('data/cleaned_data/final_data.csv')
 
 # bad ingredients database
-df_add = pd.read_csv('data/addtitives_processed.csv')
+df_add = pd.read_csv('data/cleaned_data/addtitives_processed.csv')
 
 #  ingredient vectors from the recommender
 def ingredients_vectors(df):
@@ -96,7 +103,7 @@ def extract_ingredients_from_image(image_data):
 col1, col2 = st.columns(2)
 with col1:
     product_name = st.text_input("Enter product name:", help="Type the name of the product (e.g., Oreo, Coca Cola)")
-    st.button('Enter')
+
 with col2:
     uploaded_image = st.file_uploader("Or upload an image of the food ingredients:", type=['jpg', 'png'])
 
@@ -106,6 +113,7 @@ prediction_label = None
 
 
 # Check if product name is provided
+
 if product_name:
     with st.spinner("Analyzing ingredients..."):
         time.sleep(1)  #  delay
@@ -123,6 +131,8 @@ if product_name:
             st.markdown(f"- {ingredient}")
 if uploaded_image:
     # get ingredients from uploaded image
+    st.image(uploaded_image, caption="Uploaded Image of Ingredients", use_column_width=True)
+
     ingredients = extract_ingredients_from_image(uploaded_image)
     with st.spinner("Analyzing ingredients..."):
         time.sleep(0.1)  

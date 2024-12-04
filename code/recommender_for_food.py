@@ -28,34 +28,34 @@ def recommend_healthier_alternate(product_name, data, ingredient_vectors, top_n=
         if data.iloc[product_idx]['health_label'] == 'healthy':
             return f"Product '{product_name}' is already labeled as healthy."
 
-        # Get category and vector of input product
+        #  category and vector of input product
         category = data.iloc[product_idx]['food_groups']
         product_vector = ingredient_vectors[product_idx]
 
-        # Filter healthier products in the same category
+        # filter healthier products in the same category
         healthier_products = data[(data['food_groups'] == category) & 
                                   (data['health_label'] == "healthy")]
         if healthier_products.empty:
             return f"No healthier alternatives found for '{product_name}'."
 
-        # Calculate similarity
+        # calculate similarity
         healthier_indices = healthier_products.index
         healthier_vectors = ingredient_vectors[healthier_indices]
         similarity_scores = cosine_similarity(product_vector, healthier_vectors).flatten()
 
-        # Sort by similarity
+        # sort by similarity
         sorted_indices = similarity_scores.argsort()[::-1]
 
-        # Generate unique recommendations
-        seen = set()  # To track duplicates
+        # generate unique recommendations
+        seen = set()  # to track duplicates
         recommendations = []
         for i in sorted_indices:
             rec_product = healthier_products.iloc[i]['product_name']
             rec_score = similarity_scores[i]
-            if rec_product not in seen:  # Add only if not already seen
+            if rec_product not in seen:  #
                 recommendations.append((rec_product, rec_score))
                 seen.add(rec_product)
-            if len(recommendations) == top_n:  # Stop when top_n is reached
+            if len(recommendations) == top_n:  # stop when top_n is reached
                 break
 
         return recommendations if recommendations else f"No suitable alternatives found for '{product_name}'."

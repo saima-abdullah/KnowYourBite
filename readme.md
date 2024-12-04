@@ -17,12 +17,7 @@
 ---
 
 ## **Problem Statement**
-Consumers face challenges in understanding food product labels and identifying harmful ingredients. This project, "Know Your Bite: Smarter Food Choices," aims to address these challenges by:
-1. Classifying food products as "healthy" or "unhealthy" based on their ingredient lists.
-2. Recommending healthier alternatives for products deemed "unhealthy."
-
-By leveraging machine learning and a recommender system, this solution empowers consumers to make informed dietary decisions and aligns their food choices with their health goals.
-
+"Know Your Bite" empowers consumers to make informed dietary choices by classifying food products based on ingredient lists and recommending healthier alternatives. This app leverages machine learning and extensive data to simplify food label complexity, improve transparency, and encourage healthier eating habits.
 ## **Background**
 
 Food labeling and ingredient transparency are significant concerns for consumers striving to make informed dietary decisions. Complex ingredient lists, harmful additives, ambiguous terms, and alternative ingredient names make it challenging to assess health impacts. These challenges are further exacerbated by inconsistent labeling standards. While ingredient data is available, leveraging it effectively requires innovative solutions. Addressing these issues can empower consumers, promote healthier dietary habits, and enhance transparency.
@@ -43,10 +38,12 @@ The data for this project was gathered from multiple sources:
 **Data Preparation Steps:**
 - Standardized ingredient names to account for variations and aliases.
 - Merged datasets from multiple sources to create a unified structure.
+#### **Size (Samples & Features)**
+- **Samples**: The dataset contains approximately 25457 samples.
+- **Features**: There are 11 primary features in the dataset
 
 
-
-[final_data.csv]('../data/final_data.csv'): Contains data used for our model.
+[final_data.csv](./data/cleaned_data/final_data.csv): Contains data used for our model.
 #### **Dataset Features**
 
 
@@ -69,9 +66,10 @@ The data for this project was gathered from multiple sources:
 We tested several classification models to analyze and classify food products based on their ingredient lists. The goal was to determine whether a product is "healthy" or "unhealthy" and evaluate performance using metrics like accuracy, specificity, recall, and F1-scores.
 
 #### **Models Evaluated**
-Logistic Regression with Count Vectorizer
-Naive Bayes with TF-IDF Vectorizer and SMOTE
-Gradient Boosting with TF-IDF Vectorizer
+1. Logistic Regression with Count Vectorizer.
+2. Naive Bayes with TF-IDF Vectorizer and SMOTE.
+3. Gradient Boosting with TF-IDF Vectorizer.
+
 
 | **Model**                                   | **Training Accuracy** | **Test Accuracy** | **Specificity** | **Recall** | **F1-score Healthy** | **F1-score UnHealthy** |
 |---------------------------------------------|-----------------------|-------------------|-----------------|------------|-----------------------|--------------------------|
@@ -89,6 +87,7 @@ A cosine similarity-based recommender system was developed to suggest healthier 
 **Highlights:**
 - Provides practical and consumer-friendly dietary swaps.
 - Aligns recommendations with user preferences and food categories.
+
 
 
 ## **Key Takeaways**
@@ -116,17 +115,24 @@ A cosine similarity-based recommender system was developed to suggest healthier 
 4. **Collaborate with Stakeholders:**  
    - Partner with food certification organizations to ensure reliable classifications for dietary preferences (e.g., Halal-certified, allergy-free products).  
 
+
+
 ## **Installation and Setup Instructions**
 
-1. Clone the repository:
+
+
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/know-your-bite.git
+   git clone  https://git.generalassemb.ly/saima-ahmed/capstone.git
    cd know-your-bite
-2. Install dependencies:
+
+
+2. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
 
-3. Run the Streamlit app:
+
+3. **Run the Streamlit app:**
    ```bash
        streamlit run app.py
 
@@ -137,8 +143,37 @@ A cosine similarity-based recommender system was developed to suggest healthier 
 2. Enter a food product name or upload an image of its ingredient list.
 3. View the product's classification as "healthy" or "unhealthy."
 4. If classified as "unhealthy," receive recommendations for healthier alternatives within the same food group.
+## **Streamlit App Interface**
+
+Below are screenshots showcasing the functionality and design of the Streamlit app:
+
+### **Home Page**
+The app's home page allows users to input a product name or upload an image of its ingredient list for analysis.
+
+![Home Page Screenshot](img/home_page_screenshot.png)
+
+### **Classification Output**
+When a product name is entered, the app analyzes the ingredient list and displays whether the product is classified as "healthy" or "unhealthy."
+
+![Classification Output Screenshot](img/classification_output.png)
+
+### **Recommendations**
+If a product is classified as "unhealthy," the app provides healthier alternatives within the same food group.
+
+![Recommendations Screenshot](img/recommendations.png)
+
+### **Image File Uploaded**
+Users can upload an image of the product's ingredient list, and the app processes the file for analysis.
+
+![Image File Screenshot](img/)
+
+### **Ingredients Extracted**
+Once the image is processed, the app extracts the ingredients and uses them to classify the product and suggest healthier alternatives.
+
+![Extracted Ingredients Screenshot](img/extracted_from_img.png)
+
 ## **Acknowledgments**
 
-- Data sourced from Open Food Facts API and CSPI.
+- Data sourced from [Open Food Facts API](https://world.openfoodfacts.org/data) and [CSPI (Center for Science in the Public Interest)](https://www.cspinet.org/page/chemical-cuisine-food-additive-safety-ratings).
 - Developed with Streamlit, Python, and Scikit-learn.
 - Thanks to all open-source contributors and documentation resources.
