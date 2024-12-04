@@ -165,7 +165,7 @@ If a product is classified as "unhealthy," the app provides healthier alternativ
 ### **Image File Uploaded**
 Users can upload an image of the product's ingredient list, and the app processes the file for analysis.
 
-![Image File Screenshot](img/)
+![ImageFileScreenshot](img/ingredients_image.png)
 
 ### **Ingredients Extracted**
 Once the image is processed, the app extracts the ingredients and uses them to classify the product and suggest healthier alternatives.
