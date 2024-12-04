@@ -109,10 +109,7 @@ A cosine similarity-based recommender system was developed to suggest healthier 
    - Add advanced filtering options based on user dietary preferences (e.g., vegan, Halal, gluten-free).  
    - Integrate user feedback to personalize recommendations.
 
-3. **Incorporate Real-Time Scanning:**  
-   - Use OCR to extract ingredient lists from images for instant classification and recommendations.  
-
-4. **Collaborate with Stakeholders:**  
+3. **Collaborate with Stakeholders:**  
    - Partner with food certification organizations to ensure reliable classifications for dietary preferences (e.g., Halal-certified, allergy-free products).  
 
 

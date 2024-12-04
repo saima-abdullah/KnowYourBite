@@ -86,7 +86,11 @@ def extract_ingredients_from_image(image_data):
         extracted_text = extracted_text.replace('\n', ' ').replace('\r', '')
         extracted_text = re.sub(r'\s+', ' ', extracted_text).strip() 
     # Using regex to find 'Ingredients' 
-        match = re.search(r'(?i)\bingredients\b\s*[:\-]?\s*(.*)', extracted_text)
+        match = re.search(
+    r"(?i)\bingredients\b\s*[:\-]?\s*(.+?)(?:\.|\n|contains|may contain)",  # Extract up to a stopping condition
+    extracted_text,
+    re.IGNORECASE | re.DOTALL  # Case-insensitive and allows matching across multiple lines
+)
         if match:
            
         # getting everything after 'ingredients' keyword
@@ -103,7 +107,7 @@ def extract_ingredients_from_image(image_data):
 col1, col2 = st.columns(2)
 with col1:
     product_name = st.text_input("Enter product name:", help="Type the name of the product (e.g., Oreo, Coca Cola)")
-
+  
 with col2:
     uploaded_image = st.file_uploader("Or upload an image of the food ingredients:", type=['jpg', 'png'])
 
