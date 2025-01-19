@@ -55,7 +55,16 @@ st.title('🍎 Know Your Bite')
 st.markdown("### 🌟 Discover whether your food is healthy or not!", unsafe_allow_html=True)
 
 #  food products database
-df = pd.read_csv('data/cleaned_data/final_data.csv')
+# Get the absolute path of the CSV file
+BASE_DIR = os.path.dirname(__file__)
+CSV_PATH = os.path.join(BASE_DIR, "data", "cleaned_data", "final_data.csv")
+
+if not os.path.exists(CSV_PATH):
+    raise FileNotFoundError(f"Data file not found at {CSV_PATH}. Make sure it's uploaded.")
+
+# Load the CSV file
+df = pd.read_csv(CSV_PATH)
+#df = pd.read_csv('data/cleaned_data/final_data.csv')
 
 # bad ingredients database
 df_add = pd.read_csv('data/cleaned_data/addtitives_processed.csv')
