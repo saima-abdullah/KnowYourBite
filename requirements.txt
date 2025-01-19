@@ -1,6 +1,10 @@
 streamlit
 pytesseract
-numpy
+Pillow
 pandas
+numpy
 scikit-learn
 imbalanced-learn
+opencv-python-headless
+tesseract-ocr
+re
