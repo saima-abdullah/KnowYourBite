@@ -3,3 +3,4 @@ pytesseract
 numpy
 pandas
 scikit-learn
+imbalanced-learn
