@@ -3,5 +3,4 @@ pandas
 pillow
 pytesseract
 scikit-learn
-numpy
-regex
+imblearn
