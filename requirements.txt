@@ -5,6 +5,4 @@ pandas
 numpy
 scikit-learn==1.5.1
 imbalanced-learn
-opencv-python-headless
 tesseract-ocr
-re
