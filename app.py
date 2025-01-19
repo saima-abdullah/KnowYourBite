@@ -8,6 +8,11 @@ from PIL import Image
 import pytesseract
 import re
 from code.recommender_for_food import preprocess_data, get_ingredient_vectors, recommend_healthier_alternate
+# Check if Tesseract is installed
+tesseract_check = subprocess.run(["tesseract", "--version"], capture_output=True, text=True)
+
+st.write("Tesseract Version Installed:")
+st.code(tesseract_check.stdout)
 #fonts and css
 st.markdown(
     """
