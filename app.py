@@ -66,6 +66,7 @@ ingredient_vectors, tf_idf_vec = ingredients_vectors(df)
 
 #  classifier
 def load_classifier_model(model_path="models/foodclassifier.pkl"):
+    model_path = os.path.join(os.path.dirname(__file__), "models/foodclassifier.pkl")
     with open(model_path, 'rb') as f:
         return pickle.load(f)
 classifier = load_classifier_model()
