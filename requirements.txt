@@ -1,8 +1,7 @@
 streamlit
-pytesseract
-Pillow
 pandas
+pillow
+pytesseract
+scikit-learn
 numpy
-scikit-learn==1.5.1
-imbalanced-learn
-tesseract-ocr
+regex
