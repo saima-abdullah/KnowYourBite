@@ -88,23 +88,27 @@ ingredient_vectors, tf_idf_vec = ingredients_vectors(df)
 # Get the absolute path of the model
 
 
+
 def load_classifier_model():
-    # Define the absolute path to the model file
+    # Define absolute path for model file
     model_path = os.path.join(os.path.dirname(__file__), "models", "foodclassifier.pkl")
-    
-    # Check if the model file exists before loading
+
+    # Check if file exists before loading
     if not os.path.exists(model_path):
-        raise FileNotFoundError(f"\U0000274C Model file not found at: {model_path}")
-    
+        raise FileNotFoundError(f"❌ Model file not found at: {model_path}")
+
+    # Load the model safely
     try:
         with open(model_path, "rb") as f:
-            return pickle.load(f)
+            model = pickle.load(f)
+        print("✅ Model loaded successfully!")
+        return model
     except Exception as e:
-        raise RuntimeError(f"\U0001F525 Error loading model: {e}")
+        raise RuntimeError(f"🔥 Error loading model: {e}")
 
-# Load the model
+# Load the classifier
 classifier = load_classifier_model()
-print("\U00002705 Model loaded successfully!")
+
 
 # ingredients of the input product
 def get_ingredients_by_product_name(product_name, df):
