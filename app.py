@@ -51,7 +51,25 @@ st.markdown(
     </style>
     """, unsafe_allow_html=True
 )
+st.sidebar.markdown("## About")
+st.sidebar.info(
+    """
+    This app helps users identify harmful additives in food products 
+   This app helps users identify harmful additives in food products and suggests healthier alternatives based on ingredient analysis.
+    """
+)
+# How to Use the App Section
+st.sidebar.markdown("🛠 How to Use the App")
+st.sidebar.info(
+    """
+1️⃣ **Enter a product name or food ingredients image** in the search bar.  
+2️⃣ The app will **retrieve and display the list of ingredients**.  
+3️⃣ Any **unhealthy additives** will be **highlighted** with their potential health risks.  
+4️⃣ If the product contains harmful additives, the app will **suggest healthier alternatives** from the same category.  
+5️⃣ Use this information to **make informed food choices** and select better alternatives.  
 
+
+""")
 
 st.title('🍎 Know Your Bite')
 
