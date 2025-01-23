@@ -59,13 +59,25 @@ st.markdown("### 🌟 Discover whether your food is healthy or not!", unsafe_all
 
 #  food products database
 # Get the absolute path of the CSV file
+# Construct the correct path to the CSV file inside 'data/clean_data/'
+CSV_PATH = os.path.join(os.path.dirname(__file__), "data", "clean_data", "final_data.csv")  # Replace with actual file name
+CSV_PATH_1 = os.path.join(os.path.dirname(__file__), "data", "clean_data", "addtitives_processed.csv") 
+# Check if the file exists before loading
+if not os.path.exists(CSV_PATH):
+    raise FileNotFoundError(f"❌ CSV file not found at: {CSV_PATH}")
 
 # Load the CSV file
 df = pd.read_csv(CSV_PATH)
+
+# Display first few rows to verify
+print("✅ CSV file loaded successfully!")
+print(df.head())
+# Load the CSV file
+#df = pd.read_csv(CSV_PATH)
 #df = pd.read_csv('data/cleaned_data/final_data.csv')
 
 # bad ingredients database
-df_add = pd.read_csv('data/cleaned_data/addtitives_processed.csv')
+df_add = pd.read_csv(CSV_PATH_1)
 
 #  ingredient vectors from the recommender
 def ingredients_vectors(df):
