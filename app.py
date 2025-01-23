@@ -81,9 +81,7 @@ if not os.path.exists(MODEL_PATH):
     raise FileNotFoundError(f"Model not found at {MODEL_PATH}. Make sure it's uploaded.")
 
 def load_classifier_model():
-    def load_classifier_model():
     model_path = os.path.join(os.path.dirname(__file__), "models", "classifier.pkl")
-
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"❌ Model file not found at: {model_path}")
 
