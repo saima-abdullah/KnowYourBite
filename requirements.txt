@@ -1,6 +1,7 @@
 streamlit
 pandas
-pillow
-pytesseract
+numpy
 scikit-learn
-imblearn
+pickle5
+pytesseract
+Pillow
