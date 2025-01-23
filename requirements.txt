@@ -2,6 +2,6 @@ imbalanced-learn
 streamlit
 pandas
 numpy
-scikit-learn=1.15
+scikit-learn=1.5.1
 pytesseract
 Pillow
