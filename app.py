@@ -73,6 +73,9 @@ st.sidebar.info(
 
 st.title('🍎 Know Your Bite')
 
+
+st.write(f"🚀 **Scikit-learn Version on Streamlit Cloud:** {sklearn.__version__}")
+
 st.markdown("### 🌟 Discover whether your food is healthy or not!", unsafe_allow_html=True)
 
 #  food products database
