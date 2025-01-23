@@ -59,11 +59,6 @@ st.markdown("### 🌟 Discover whether your food is healthy or not!", unsafe_all
 
 #  food products database
 # Get the absolute path of the CSV file
-BASE_DIR = os.path.dirname(__file__)
-CSV_PATH = os.path.join(BASE_DIR, "data", "cleaned_data", "final_data.csv")
-
-if not os.path.exists(CSV_PATH):
-    raise FileNotFoundError(f"Data file not found at {CSV_PATH}. Make sure it's uploaded.")
 
 # Load the CSV file
 df = pd.read_csv(CSV_PATH)
@@ -86,8 +81,15 @@ if not os.path.exists(MODEL_PATH):
     raise FileNotFoundError(f"Model not found at {MODEL_PATH}. Make sure it's uploaded.")
 
 def load_classifier_model():
-    with open(MODEL_PATH, 'rb') as f:
+    def load_classifier_model():
+    model_path = os.path.join(os.path.dirname(__file__), "models", "classifier.pkl")
+
+    if not os.path.exists(model_path):
+        raise FileNotFoundError(f"❌ Model file not found at: {model_path}")
+
+    with open(model_path, "rb") as f:
         return pickle.load(f)
+    
 classifier = load_classifier_model()
 
 # ingredients of the input product
