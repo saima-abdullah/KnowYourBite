@@ -8,7 +8,7 @@ from PIL import Image
 import pytesseract
 import re
 import os
-from code.recommender_for_food import preprocess_data, get_ingredient_vectors, recommend_healthier_alternate
+from recommender_for_food import preprocess_data, get_ingredient_vectors, recommend_healthier_alternate
 
 #fonts and css
 st.markdown(
