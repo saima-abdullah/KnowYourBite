@@ -1,4 +1,4 @@
-# **Know Your Bite: Smarter Food Choices**
+# **Know Your Bite: Harmful Additive Detection in Food Products**
 
 ## **Table of Contents**
 1. [Problem Statement](#problem-statement)  
